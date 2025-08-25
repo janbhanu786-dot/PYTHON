@@ -1,0 +1,16 @@
+students =[
+    {"name": "bhanu", "dept": "cse", "marks": [30,10,45]},
+    {"name": "aiza", "dept": "cse", "marks": [30,20,45]},
+    {"name": "anifa", "dept": "cse", "marks": [20,10,45]},
+    {"name": "mani", "dept": "ece", "marks": [20,30,50]},
+    {"name": "kousar", "dept": "ece", "marks": [30,15,45]},
+    ]
+    
+for i in students:
+    tot=sum(i["marks"])
+    d=tot//3
+    i["per"]=d
+res=sorted(students,key=lambda x:x["per"],reverse=True)
+des=["FIRST","SECOND","THIRD","FOURTH","FIFITH"]
+for i in range(5):
+    print("RANK {} {}:{} has scored per stands {}".format(i+1,res[i]["name"],res[i]["per"],des[i]))
