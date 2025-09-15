@@ -1,0 +1,15 @@
+def pattern(n):
+    symbols=["A","#","$","*"]
+    grid=[[" " for _ in range(n)] for _ in range(n)]
+    layers=(n+1)
+    for layer in range(layers):
+        ch=symbols[layer % len(symbols)]
+        for i in range(layer,n-layer):
+            grid[layer][i]=ch
+            grid[n-layer-1][i]=ch
+        for i in range(layer, n-layer):
+            grid[i][layer]=ch
+            grid[i][n-layer-1]=ch
+    for row in grid:
+        print(" ".join(row))
+pattern(7)
